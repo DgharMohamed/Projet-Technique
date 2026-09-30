@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "titre": "Developpeur PHP",
+        "description": "Developpement d'applications web",
+        "salaire": 8000,
+        "domaine_id": 1
+    },
+    {
+        "id": 2,
+        "titre": "Developpeur Flutter",
+        "description": "Developpement d'applications mobiles",
+        "salaire": 9000,
+        "domaine_id": 1
+    },
+    {
+        "id": 3,
+        "titre": "Charge de communication",
+        "description": "Gestion des reseaux sociaux et de l'image de l'entreprise",
+        "salaire": 7000,
+        "domaine_id": 2
+    },
+    {
+        "id": 4,
+        "titre": "Comptable",
+        "description": "Suivi comptable et declarations fiscales",
+        "salaire": 6500,
+        "domaine_id": 3
+    },
+    {
+        "id": 5,
+        "titre": "Charge du recrutement",
+        "description": "Selection et accompagnement des candidats",
+        "salaire": 6800,
+        "domaine_id": 4
+    },
+    {
+        "id": 6,
+        "titre": "Vendeur",
+        "description": "Conseil et vente en magasin",
+        "salaire": 5500,
+        "domaine_id": 5
+    }
+]

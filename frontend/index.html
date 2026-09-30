@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des offres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-gray-800 text-white p-6">
+            <h1 class="text-2xl font-bold mb-8">Dashboard</h1>
+            <nav>
+                <a href="#" class="block p-3 bg-gray-700">Offres</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8 bg-gray-100">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold">Gestion des Offres</h2>
+                <button id="btnAjouter" class="bg-blue-600 text-white px-5 py-3">+ Ajouter Offre</button>
+            </div>
+
+            <div id="message"></div>
+
+            <div class="p-6 bg-white mb-4 hidden" id="sectionForm">
+                <form id="form">
+                    <label class="block mb-2">Titre</label>
+                    <input type="text" class="w-full border p-3 mb-4" id="titre">
+
+                    <label class="block mb-2">Description</label>
+                    <input type="text" class="w-full border p-3 mb-4" id="description">
+
+                    <label class="block mb-2">Salaire (DH)</label>
+                    <input type="number" class="w-full border p-3 mb-4" id="salaire">
+
+                    <label class="block mb-2">Domaine</label>
+                    <select class="w-full border p-3 mb-4" id="domaine_id"></select>
+
+                    <button class="bg-blue-600 text-white px-5 py-3">Ajouter</button>
+                    <button class="bg-gray-500 text-white px-5 py-3" id="annulerBtn" type="button">Annuler</button>
+                </form>
+            </div>
+
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-4 text-left">Titre</th>
+                        <th class="p-4 text-left">Domaine</th>
+                        <th class="p-4 text-left">Salaire</th>
+                        <th class="p-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable"></tbody>
+            </table>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
