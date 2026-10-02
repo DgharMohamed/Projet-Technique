@@ -1,39 +1,31 @@
 <?php
-require_once __DIR__ . "/../classes.php";
+
 header("Content-Type: application/json");
 
-class GestionDomaine {
-    private string $path = __DIR__ . "/../database/domaines.json";
+require_once __DIR__ . "/../classes.php";
 
-    public function afficherDomaines() {
-        echo json_encode(json_decode(file_get_contents($this->path), true));
-    }
+$file = __DIR__ . "/../database/domaines.json";
 
-    public function addDomaine() {
-        $domaines = json_decode(file_get_contents($this->path), true);
-        $data = json_decode(file_get_contents("php://input"), true);
+$domaines = json_decode(file_get_contents($file), true) ?: [];
 
-        if (empty($data["nom"])) {
-            $this->repondre(false, "Le nom est obligatoire");
-        }
 
-        $id = $domaines ? max(array_column($domaines, "id")) + 1 : 1;
-        $domaines[] = (new Domaine($id, $data["nom"]))->toArray();
-
-        file_put_contents($this->path, json_encode($domaines, JSON_PRETTY_PRINT));
-        $this->repondre(true, "Domaine ajouté avec succès");
-    }
-
-    private function repondre(bool $success, string $message) {
-        echo json_encode(["success" => $success, "message" => $message]);
-        exit;
-    }
-
-    public function requestTraitement() {
-        $method = $_SERVER["REQUEST_METHOD"];
-        if ($method == "GET") $this->afficherDomaines();
-        if ($method == "POST") $this->addDomaine();
-    }
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    echo json_encode($domaines);
+    exit;
 }
 
-(new GestionDomaine())->requestTraitement();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    $id = $domaines ? max(array_column($domaines, "id")) + 1 : 1;
+
+    $domaine = new Domaine($id, $data["nom"]);
+
+    $domaines[] = $domaine;
+
+    file_put_contents($file, json_encode($domaines, JSON_PRETTY_PRINT));
+
+    echo json_encode($domaine);
+}

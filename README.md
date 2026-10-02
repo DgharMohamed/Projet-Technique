@@ -14,7 +14,7 @@ Application web de gestion d'offres d'emploi : **PHP (POO) + JSON + API + AJAX**
 Projet-Technique/
 ├── backend/
 │   ├── api/
-│   │   ├── GestionOffre.php      # API des offres (GET / POST / DELETE)
+│   │   ├── GestionOffre.php      # API des offres (GET / POST)
 │   │   └── GestionDomaine.php    # API des domaines (GET / POST)
 │   ├── classes.php               # classes Domaine + Offre (un seul fichier)
 │   └── database/

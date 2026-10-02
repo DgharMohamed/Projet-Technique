@@ -1,12 +1,5 @@
 [
     {
-        "id": 1,
-        "titre": "Developpeur PHP",
-        "description": "Developpement d'applications web",
-        "salaire": 8000,
-        "domaine_id": 1
-    },
-    {
         "id": 2,
         "titre": "Developpeur Flutter",
         "description": "Developpement d'applications mobiles",
@@ -40,5 +33,19 @@
         "description": "Conseil et vente en magasin",
         "salaire": 5500,
         "domaine_id": 5
+    },
+    {
+        "id": 7,
+        "titre": "Rappel N1",
+        "description": "FDFGDGDGDGD",
+        "salaire": 5000,
+        "domaine_id": 5
+    },
+    {
+        "id": 8,
+        "titre": "Algorithms",
+        "description": "TRTJRTJTJT",
+        "salaire": 50000,
+        "domaine_id": 1
     }
 ]
