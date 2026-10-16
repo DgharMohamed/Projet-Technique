@@ -3,42 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Offres</title>
+    <title>Administration - Gestion Du Offre</title>
+    <!-- Importation simplifiée de Tailwind CSS via CDN pour l'apprentissage -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration des couleurs primaires (optionnel, mais garde la maquette jolie) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: { 50: '#f0f6ff', 500: '#2673e8', 600: '#1c5bba', 900: '#0a2042' } }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-100">
-    <div class="max-w-4xl mx-auto p-4">
-        <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold">Gestion des Offres</h1>
-            <button id="btnAdd" class="bg-blue-600 text-white px-4 py-2 rounded">+ Ajouter</button>
+<body class="bg-gray-100 text-gray-800 flex h-screen overflow-hidden">
+
+    <!-- BARRE LATÉRALE (Sidebar) -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col hidden md:flex">
+        <div class="p-6 border-b border-gray-800">
+            <h2 class="text-xl font-bold">Admin Blog</h2>
+            <p class="text-xs text-primary-500 mt-1 uppercase font-semibold tracking-wider">Sprint 1</p>
         </div>
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="#" class="block px-4 py-2 rounded text-gray-400 hover:bg-gray-800 hover:text-white transition-colors">Tableau de bord</a>
+            <a href="#" class="block px-4 py-2 rounded text-gray-400 hover:bg-gray-800 hover:text-white transition-colors">Offres</a>
+            <!-- Lien actif -->
+            <a href="#" class="block px-4 py-2 rounded bg-primary-600 text-white font-medium">Domaines</a>
+        </nav>
+    </aside>
 
-        <div id="formSection" class="hidden bg-white p-6 rounded  mb-6">
-            <form id="form" class="flex flex-col gap-4">
-                <input name="titre" required class="border p-2 rounded" type="text">
-                <input name="description" class="border p-2 rounded" type="text">
-                <input name="salaire"  class="border p-2 rounded" type="number" step="100">
-                <select name="domaine_id" required class="border p-2 rounded" id="domaineSelect">
+    <!-- CONTENU PRINCIPAL -->
+    <div class="flex-1 flex flex-col h-screen overflow-hidden">
+        
+        <!-- ENTÊTE (Header) -->
+        <header class="bg-black h-16 border-b border-gray-200 flex items-center justify-between px-6">
+            <div class="font-medium text-white">
+                Gestion des offres
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-semibold text-white">Admin</span>
+            </div>
+        </header>
 
-                </select>
-                <div class="flex gap-2">
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded">Enregistrer</button>
-                    <button type="button" id="btnCancel" class="bg-gray-500 text-white px-4 py-2 rounded">Annuler</button>
-                </div>
-            </form>
-        </div>
-
-        <table class="w-full bg-white rounded shadow overflow-hidden">
-            <thead class="bg-gray-200">
-                <tr>
-                    <th class="p-3 text-left">Titre</th>
-                    <th class="p-3 text-left">Domaine</th>
-                    <th class="p-3 text-left">Salaire</th>
-                </tr>
-            </thead>
-            <tbody id="tbody" class="divide-y"></tbody>
-        </table>
+        <!-- ZONE DE TRAVAIL (Main) -->
+ <main class="max-w-3xl ">
+    <div class="flex justify-between mb-4">
+      <h1 class="text-xl font-bold">Gestion des offres</h1>
+      <button id="btnAdd" class="bg-blue-600 text-white p-2">+ Ajouter</button>
     </div>
+    <form id="form" class=" bg-white p-4 mb-4">
+      <input name="titre" placeholder="Titre de l'offre" required class="w-full border p-2 mb-3">
+      <input name="salaire" type="number" min="0" step="any" placeholder="Salaire (DH)" required class="w-full border p-2 mb-3">
+      <select name="domaine_id" id="domaineSelect" required class="w-full border p-2 mb-3">
+        
+      </select>
+      <button class="bg-blue-600 text-white p-2">Enregistrer</button>
+      <button type="button" id="btnCancel" class="bg-gray-500 text-white p-2">Annuler</button>
+    </form>
+    <table class="w-full bg-white text-left">
+      <thead class="bg-gray-200"><tr><th class="p-3">Titre</th><th class="p-3">Domaine</th><th class="p-3">Salaire</th></tr></thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+  </main>
+    </div>
+
+    <!-- Script SPA -->
     <script src="index.js"></script>
 </body>
 </html>

@@ -1,26 +1,15 @@
-# Projet Technique — Gestion des offres
+# Gestion des offres — version Live Coding
 
-Application web de gestion d'offres d'emploi : **PHP (POO) + JSON + API + AJAX**
-## Technologies
+Application simple en PHP orienté objet, JSON, HTML et JavaScript.
 
-- PHP (POO) — classes et API
-- HTML5 / Tailwind CSS (CDN) — interface
-- JavaScript + `fetch()` — AJAX
-- JSON — stockage des données
+- Offre : `id`, `titre`, `salaire`, `domaine_id`
+- Classes `Offre` et `Domaine` avec propriétés privées, getters et setters.
+- API : `GET` pour afficher et `POST` pour ajouter.
+- Stockage dans les fichiers JSON.
 
-## Structure
+## Lancement
+1. Placez le dossier `LiveCoding` dans le répertoire de votre serveur PHP (par exemple `htdocs`).
+2. Démarrez Apache.
+3. Ouvrez `frontend/index.html` via le serveur local.
 
-```text
-Projet-Technique/
-├── backend/
-│   ├── api/
-│   │   ├── GestionOffre.php      # API des offres (GET / POST)
-│   │   └── GestionDomaine.php    # API des domaines (GET / POST)
-│   ├── classes.php               # classes Domaine + Offre (un seul fichier)
-│   └── database/
-│       ├── offres.json
-│       └── domaines.json
-└── frontend/
-    ├── index.html                # une seule page (Tailwind)
-    └── index.js                  # tout le fetch()
-```
+Le formulaire d'offre contient uniquement le titre, le salaire et le domaine.
