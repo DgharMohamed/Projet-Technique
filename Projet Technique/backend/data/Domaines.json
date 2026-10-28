@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nom": "Informatique",
+        "description": "D\u00e9veloppement, r\u00e9seaux et syst\u00e8mes"
+    },
+    {
+        "id": 2,
+        "nom": "Finance",
+        "description": "Comptabilit\u00e9, audit et gestion financi\u00e8re"
+    },
+    {
+        "id": 3,
+        "nom": "Marketing",
+        "description": "Communication et strat\u00e9gie digitale"
+    },
+    {
+        "id": 4,
+        "nom": "ergerg",
+        "description": "grrgerg"
+    }
+]

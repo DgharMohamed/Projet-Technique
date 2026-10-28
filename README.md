@@ -1,6 +1,9 @@
 # Projet Technique — Gestion des offres
 
 Application web de gestion d'offres d'emploi : **PHP (POO) + JSON + API + AJAX**
+
+> Actuellement : gestion des domaines (affichage en tableau)
+
 ## Technologies
 
 - PHP (POO) — classes et API
@@ -12,15 +15,26 @@ Application web de gestion d'offres d'emploi : **PHP (POO) + JSON + API + AJAX**
 
 ```text
 Projet-Technique/
-├── backend/
-│   ├── api/
-│   │   ├── GestionOffre.php      # API des offres (GET / POST / DELETE)
-│   │   └── GestionDomaine.php    # API des domaines (GET / POST)
-│   ├── classes.php               # classes Domaine + Offre (un seul fichier)
-│   └── database/
-│       ├── offres.json
-│       └── domaines.json
-└── frontend/
-    ├── index.html                # une seule page (Tailwind)
-    └── index.js                  # tout le fetch()
+├── index.html                    # page admin (Tailwind) : Domaines
+├── assets/
+│   └── js/
+│       └── app.js                # tout le fetch() (AJAX)
+└── backend/
+    ├── api/
+    │   └── api.php               # API des domaines (GET / POST)
+    ├── classes/
+    │   ├── Domaine.php           # classe Domaine
+    │   └── GestionDomaine.php    # gestion des domaines (JSON)
+    ├── controller/
+    │   └── ControllerDomaine.php # contrôleur des domaines
+    └── data/
+        └── Domaines.json
 ```
+
+## Lancement
+
+```bash
+php -S localhost:8000
+```
+
+Puis ouvrir http://localhost:8000
