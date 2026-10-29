@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__ . "/Domaine.php";
     class GestionDomaine{
-        private static $dataFile=__DIR__."/../data/Domaines.json";
+        private static $dataFile= __DIR__."/../data/Domaines.json";
 
         public function AfficherTous(){
             $data=[];
