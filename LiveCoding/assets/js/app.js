@@ -3,7 +3,7 @@ const sectionForm=document.getElementById("section-form")
 const btnAjouter=document.getElementById("btn-show-form")
 const btnAnnuler=document.getElementById("btn-cancel-form")
 const tbody=document.getElementById("table-domaines-body")
-const btnEnregister=document.getElementById("enregister")
+const btnEnregistrer=document.getElementById("enregistrer")
 const api="http://localhost:8000/backend/api/api.php"
 
 
