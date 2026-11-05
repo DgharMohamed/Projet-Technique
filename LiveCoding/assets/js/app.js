@@ -7,16 +7,7 @@ const btnEnregistrer=document.getElementById("enregistrer")
 const api="http://localhost:8000/backend/api/api.php"
 
 
-function Loading(isloading){
-    if(isloading){
-        btnEnregister.disabled=true
-        btnEnregister.textContent="En cours ..."
-    }
-    else{
-        btnEnregister.disabled=false
-        btnEnregister.textContent="Enregistrer"
-    }
-}
+
 
 function Toast(message,type="success"){
     const toastContainer=document.getElementById("toast-container")
@@ -54,7 +45,6 @@ function AfficherDomaines(){
         })
     })
     .catch(error=>{
-        Loading(false)
         console.error(error)
     })
 }
@@ -64,7 +54,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     AfficherDomaines()
     form.addEventListener("submit",(e)=>{
         e.preventDefault()
-        Loading(true)
         fetch(api,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -74,8 +63,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             })
         }).then(response=>response.json())
         .then(data=>{
-            Loading(false)
-            Toast(data["message"])
+            Toast("Seccuss")
             form.reset()
             AfficherDomaines()
         })
